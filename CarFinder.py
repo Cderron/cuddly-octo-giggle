@@ -1,17 +1,15 @@
-
-
-
 is_running = True
 AllowedVehiclesList = ['Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan']
 while is_running:
         print('********************************')
-        print('AutoCountry Vehicle Finder v0.3')
+        print('AutoCountry Vehicle Finder v0.4')
         print('********************************')
         print('Please Enter the following number below from the following menu:')
         print('\n1. PRINT all Authorized Vehicles')
         print('2. SEARCH for Authorized Vehicle')
         print('3. ADD Authorized Vehicle')
-        print('4. Exit')
+        print('4. DELETE Authorized Vehicle')
+        print('5. Exit')
         print('********************************')
         choice = input()
 
@@ -30,6 +28,12 @@ while is_running:
              print(f'You have added "{response}" as an authorized vehicle')
              AllowedVehiclesList.append(response)
         elif choice == '4':
+            response = input('Please Enter the full Vehicle name you would like to REMOVE: ')
+            choice=input(f'Are you sure you want to remove "{response}" from the Authorized Vehicles List? ')
+            if choice == 'yes':
+                 AllowedVehiclesList.remove(response)
+                 print(f'You have REMOVED "{response}" as an authorized vehicle')
+        elif choice == '5':
             is_running = False
             print('Thank you for using the AutoCountry Vehicle Finder, good-bye!')
             break
