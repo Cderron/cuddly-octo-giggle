@@ -1,5 +1,11 @@
+import json
+
 is_running = True
-AllowedVehiclesList = ['Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan']
+AllowedVehiclesList = ['Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Rivian R1T', 'Ram 1500']
+import json
+
+with open('Project CarFinder/Car_Finder.json', 'w') as f:
+    json.dump(AllowedVehiclesList, f)
 while is_running:
         print('********************************')
         print('AutoCountry Vehicle Finder v0.4')
@@ -29,7 +35,7 @@ while is_running:
              AllowedVehiclesList.append(response)
         elif choice == '4':
             response = input('Please Enter the full Vehicle name you would like to REMOVE: ')
-            choice=input(f'Are you sure you want to remove "{response}" from the Authorized Vehicles List? ')
+            choice = input(f'Are you sure you want to remove "{response}" from the Authorized Vehicles List? ')
             if choice == 'yes':
                  AllowedVehiclesList.remove(response)
                  print(f'You have REMOVED "{response}" as an authorized vehicle')
